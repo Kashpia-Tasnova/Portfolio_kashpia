@@ -296,7 +296,7 @@ export default function HomePage() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="/kashpia%20tasnova%20resume.pdf"
                 download
                 className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-[#B066FF]/70 hover:bg-[#A259FF]/10"
               >
