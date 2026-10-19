@@ -783,45 +783,69 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-4">
-            {/* EMAIL */}
+          {/* EMAIL */}
             <a
               href="mailto:kashpiatasnova@gmail.com"
               className="group flex items-center justify-between gap-4 rounded-2xl border border-white/[0.08] bg-[#080808] p-5 transition hover:border-[#A259FF]/40 hover:bg-[#0B0710] sm:p-6"
-            >
-              <div className="min-w-0">
-                <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
-                  EMAIL ME
-                </p>
+              >
+      <div className="min-w-0">
+        <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
+              EMAIL ME
+         </p>
 
-                <p className="mt-2 break-all text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
-                  kashpiatasnova@gmail.com
-                </p>
-              </div>
+        <p className="mt-2 break-all text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
+             kashpiatasnova@gmail.com
+        </p>
+      </div>
 
-              <span className="shrink-0 text-xl text-[#B066FF] transition group-hover:translate-x-1">
-                ↗
-              </span>
-            </a>
+      {/* EMAIL ICON */}
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+        className="h-6 w-6 shrink-0 text-[#B066FF] transition group-hover:scale-110 group-hover:text-[#D4B5FF]"
+        >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+      </svg>
+          </a>
+          
+          
+           {/* PHONE */}
+              <a
+                href="tel:+8801776893440"
+                className="group flex items-center justify-between gap-4 rounded-2xl border border-white/[0.08] bg-[#080808] p-5 transition hover:border-[#A259FF]/40 hover:bg-[#0B0710] sm:p-6"
+              >
+        <div>
+        <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
+           CALL ME
+        </p>
 
-            {/* PHONE */}
-            <a
-              href="tel:+8801776893440"
-              className="group flex items-center justify-between gap-4 rounded-2xl border border-white/[0.08] bg-[#080808] p-5 transition hover:border-[#A259FF]/40 hover:bg-[#0B0710] sm:p-6"
-            >
-              <div>
-                <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
-                  CALL ME
-                </p>
+        <p className="mt-2 text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
+           +880 1776-893440
+        </p>
+       </div>
 
-                <p className="mt-2 text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
-                  +880 1776-893440
-                </p>
-              </div>
-
-              <span className="shrink-0 text-xl text-[#B066FF] transition group-hover:translate-x-1">
-                ↗
-              </span>
-            </a>
+        {/* PHONE ICON */}
+         <svg
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           strokeWidth={1.7}
+           strokeLinecap="round"
+           strokeLinejoin="round"
+           aria-hidden="true"
+          className="h-6 w-6 shrink-0 text-[#B066FF] transition group-hover:scale-110 group-hover:text-[#D4B5FF]"
+         >
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z" />
+      </svg>
+          </a>
 
             {/* WHATSAPP */}
             <a
