@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const skills = [
@@ -18,11 +19,11 @@ const skills = [
   },
   {
     title: "Backend Development",
-    items: ["Node.js", "REST APIs", "Authentication", "MongoDB"],
+    items: ["PHP", "Laravel","Node.js", "REST APIs", "Authentication", "MongoDB"],
   },
   {
     title: "Tools & Workflow",
-    items: ["Git", "GitHub", "VS Code", "Figma", "Vercel"],
+    items: ["Git", "GitHub", "VS Code", "Vercel"],
   },
 ];
 
@@ -32,35 +33,33 @@ const projects = [
     name: "BazarDor",
     category: "WEB APPLICATION",
     description:
-      "A market-price platform designed to help people explore essential product prices and compare market information.",
+      "A responsive web application that helps users explore essential product prices in Bangladesh, browse categories, and compare market prices.",
     stack: "Next.js · TypeScript · Tailwind CSS",
     href: "/projects/bazardor",
-    visual: "from-violet-950 via-[#24133c] to-black",
-    symbol: "৳",
+    image: "/projects/bazardor.png",
   },
   {
     number: "02",
     name: "FitLog",
     category: "FITNESS APPLICATION",
     description:
-      "A fitness application for exploring workouts, viewing exercise details, and organizing a personal workout plan.",
+      "A fitness application where users can explore workouts, view exercise details, sort exercises, and organize a personal workout plan.",
     stack: "Next.js · React · Tailwind CSS",
     href: "/projects/fitlog",
-    visual: "from-[#241238] via-[#151020] to-black",
-    symbol: "↗",
+    image: "/projects/fitlog.png",
   },
   {
     number: "03",
-    name: "Tomato Leaf Disease Detection",
-    category: "AI / DEEP LEARNING",
+    name: "DevStack",
+    category: "REACT APPLICATION",
     description:
-      "An explainable deep-learning project exploring tomato leaf disease classification using transfer learning and XAI.",
-    stack: "Python · TensorFlow · SHAP · LIME",
-    href: "/projects/tomato-leaf-detection",
-    visual: "from-[#30143d] via-[#1b1026] to-black",
-    symbol: "✳",
+      "An interactive technology-stack builder that lets users explore web technologies by category, add or remove technologies, and receive instant toast notifications.",
+    stack: "React · TypeScript · Tailwind CSS · Vite",
+    href: "/projects/devstack",
+    image: "/projects/devstack.png",
   },
 ];
+
 
 const socialLinks = [
   {
@@ -88,6 +87,31 @@ const navItems = [
   ["Experience", "#experience"],
   ["Education", "#education"],
   ["Contact", "#contact"],
+];
+
+const education = [
+  {
+    level: "BACHELOR'S DEGREE",
+    qualification: "B.Sc. in Computer Science and Engineering",
+    institution: "International Islamic University Chittagong",
+    description:
+      "Studied computer science and engineering, developing knowledge of software development, programming, databases, and emerging technologies.",
+  },
+  {
+    level: "HIGHER SECONDARY CERTIFICATE",
+    qualification: "Higher Secondary Certificate (HSC)",
+    institution:
+      "Bangladesh Mahila Samiti Girls' High School and College",
+    description:
+      "Completed higher secondary education and built a foundation for further academic study.",
+  },
+  {
+    level: "SECONDARY SCHOOL CERTIFICATE",
+    qualification: "Secondary School Certificate (SSC)",
+    institution: "Aunkur Society Girls' High School",
+    description:
+      "Completed secondary education and developed the academic foundation for higher studies.",
+  },
 ];
 
 function SocialIcon({
@@ -139,7 +163,11 @@ function SocialIcon({
   );
 }
 
-function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
+function WhatsAppIcon({
+  className = "h-5 w-5",
+}: {
+  className?: string;
+}) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -152,29 +180,31 @@ function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-const education = [
-  {
-    level: "BACHELOR'S DEGREE",
-    qualification: "B.Sc. in Computer Science and Engineering",
-    institution: "International Islamic University Chittagong",
-    description:
-      "Studied computer science and engineering, developing knowledge of software development, programming, databases, and emerging technologies.",
-  },
-  {
-    level: "HIGHER SECONDARY CERTIFICATE",
-    qualification: "Higher Secondary Certificate (HSC)",
-    institution: "Bangladesh Mahila Samiti Girls' High School and College",
-    description:
-      "Completed higher secondary education and built a foundation for further academic study.",
-  },
-  {
-    level: "SECONDARY SCHOOL CERTIFICATE",
-    qualification: "Secondary School Certificate (SSC)",
-    institution: "Aunkur Society Girls' High School",
-    description:
-      "Completed secondary education and developed the academic foundation for higher studies.",
-  },
-];
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div>
+      <p className="text-xs font-semibold tracking-[0.25em] text-[#B066FF]">
+        {eyebrow}
+      </p>
+
+      <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        {title}
+      </h2>
+
+      <p className="mt-4 max-w-2xl text-sm leading-7 text-[#92899E] sm:text-base">
+        {description}
+      </p>
+    </div>
+  );
+}
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -200,7 +230,7 @@ export default function HomePage() {
             href="#contact"
             className="hidden shrink-0 rounded-full border border-[#A259FF]/50 px-5 py-2.5 text-xs font-semibold text-white transition hover:border-[#B066FF] hover:bg-[#A259FF]/15 sm:inline-flex"
           >
-            LET&apos;S TALK <span className="ml-2 text-[#B066FF]">↗</span>
+            LET&apos;S TALK 
           </a>
 
           <button
@@ -235,7 +265,7 @@ export default function HomePage() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-lg border border-[#A259FF]/40 px-4 py-3 text-sm text-[#D4B5FF]"
               >
-                Let&apos;s Talk ↗
+                Let&apos;s Talk 
               </a>
             </div>
           </div>
@@ -327,7 +357,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* PROFILE PHOTO — NO TEXT OVERLAYS */}
+          {/* PROFILE PHOTO */}
           <div className="relative mx-auto w-full max-w-[390px] animate-[fadeUp_1s_ease-out_both] lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-[#A259FF]/20 via-transparent to-[#C882F0]/10 blur-2xl" />
 
@@ -343,7 +373,6 @@ export default function HomePage() {
                 />
 
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
-
                 <div className="pointer-events-none absolute inset-0 rounded-[1.3rem] border border-white/[0.04]" />
               </div>
             </div>
@@ -362,49 +391,98 @@ export default function HomePage() {
       {/* ABOUT */}
       <section
         id="about"
-        className="scroll-mt-24 border-t border-white/[0.06] bg-black px-5 py-24 sm:px-8 lg:px-12"
+        className="scroll-mt-20 border-t border-white/[0.06] bg-[#09080C] px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:px-12"
       >
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
             <p className="text-xs tracking-[0.25em] text-[#B066FF]">
-              01 / ABOUT ME
+             ABOUT ME
             </p>
+
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               A little about
               <br />
               <span className="text-[#B066FF]">who I am.</span>
             </h2>
+
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#92899E] sm:text-base">
+              A little about my journey, interests, and approach to
+              development.
+            </p>
           </div>
 
-          <div className="space-y-5 text-sm leading-8 text-[#AAA4B3] sm:text-base">
-            <p>
-              I&apos;m a Full-Stack Developer and AI enthusiast who enjoys
-              combining technology, creativity, and problem-solving to build
-              useful web experiences. My journey into programming has encouraged
-              me to keep learning, experiment with new tools, and improve with
-              every project.
-            </p>
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+            {/* MY JOURNEY */}
+            <div className="rounded-3xl border border-white/[0.08] bg-[#0D0C11] p-7 sm:p-9">
+              <h3 className="text-2xl font-semibold text-white">
+                My Journey
+              </h3>
 
-            <p>
-              I particularly enjoy full-stack development, creating responsive
-              user interfaces, building backend functionality, integrating APIs,
-              and working with databases. I also explore machine learning to
-              understand how intelligent systems can solve practical problems.
-            </p>
+              <div className="mt-5 space-y-4 text-sm leading-8 text-[#AAA4B3] sm:text-base">
+                <p>
+                  I&apos;m a Full-Stack Developer and AI enthusiast who enjoys
+                  combining technology, creativity, and problem-solving to
+                  build useful web experiences. My journey into programming
+                  has encouraged me to keep learning, experiment with new
+                  tools, and improve with every project.
+                </p>
 
-            <p>
-              Outside programming, I value continuous learning, creative
-              exploration, and discovering new ideas. I believe curiosity,
-              patience, and consistency are important parts of becoming a better
-              developer.
-            </p>
+                <p>
+                  I particularly enjoy full-stack development, creating
+                  responsive user interfaces, building backend functionality,
+                  integrating APIs, and working with databases. I also explore
+                  machine learning to understand how intelligent systems can
+                  solve practical problems.
+                </p>
 
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 pt-2 text-sm font-semibold text-[#C28AFF] hover:text-white"
-            >
-              Let&apos;s connect <span>↗</span>
-            </a>
+                <p>
+                  Outside programming, I value continuous learning, creative
+                  exploration, and discovering new ideas. I believe curiosity,
+                  patience, and consistency are important parts of becoming a
+                  better developer.
+                </p>
+              </div>
+            </div>
+
+            {/* WHAT DRIVES ME */}
+            <div className="rounded-3xl border border-[#A259FF]/20 bg-gradient-to-br from-[#1B1028] to-[#0D0C11] p-7 sm:p-9">
+              <p className="text-xs font-semibold tracking-[0.2em] text-[#B066FF]">
+                WHAT DRIVES ME
+              </p>
+
+              <div className="mt-7 space-y-6">
+                {[
+                  {
+                    title: "Curiosity",
+                    text: "Exploring new technologies and understanding how things work.",
+                  },
+                  {
+                    title: "Problem Solving",
+                    text: "Breaking challenges into manageable steps.",
+                  },
+                  {
+                    title: "Continuous Growth",
+                    text: "Learning from projects, feedback, and new experiences.",
+                  },
+                ].map((item, index) => (
+                  <div key={item.title} className="flex gap-4">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#A259FF]/30 bg-[#A259FF]/10 text-sm font-bold text-[#D4B5FF]">
+                      0{index + 1}
+                    </span>
+
+                    <div>
+                      <h3 className="font-semibold text-white">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-1 text-sm leading-7 text-[#AAA4B3]">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -416,14 +494,16 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-7xl">
           <p className="text-xs tracking-[0.25em] text-[#B066FF]">
-            02 / MY TOOLKIT
+          MY TOOLKIT
           </p>
 
-          <div className="mt-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="mt-4">
             <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Skills &amp; <span className="text-[#B066FF]">technologies.</span>
+              Skills &amp;{" "}
+              <span className="text-[#B066FF]">technologies.</span>
             </h2>
-            <p className="max-w-md text-sm leading-7 text-[#92899E]">
+
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#92899E] sm:text-base">
               The tools and technologies I use to bring ideas to life and
               continue growing as a developer.
             </p>
@@ -462,75 +542,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section
-        id="projects"
-        className="scroll-mt-24 bg-black px-5 py-24 sm:px-8 lg:px-12"
-      >
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs tracking-[0.25em] text-[#B066FF]">
-            03 / SELECTED WORK
-          </p>
+{/* PROJECTS */}
+<section
+  id="projects"
+  className="scroll-mt-28 border-y border-white/[0.06] bg-[#09080C] px-5 py-24 sm:px-8 lg:px-12"
+>
+  <div className="mx-auto max-w-7xl">
+    <SectionHeading
+      eyebrow="SELECTED WORK"
+      title="Featured Projects"
+      description="A selection of projects that reflect my learning, technical interests, and approach to solving problems."
+    />
 
-          <div className="mt-4 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Things I&apos;ve <span className="text-[#B066FF]">built.</span>
-            </h2>
-            <p className="max-w-md text-sm leading-7 text-[#92899E]">
-              A selection of projects that reflect my learning, technical
-              interests, and approach to solving problems.
+    <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <article
+          key={project.number}
+          className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-[#080808] transition duration-300 hover:-translate-y-1.5 hover:border-[#A259FF]/40 hover:shadow-[0_20px_55px_#A259FF15]"
+        >
+          {/* PROJECT IMAGE */}
+          <div className="relative h-56 overflow-hidden bg-[#12091C] sm:h-60">
+            <Image
+              src={project.image}
+              alt={`${project.name} project screenshot`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-contain object-center transition duration-500 group-hover:scale-[1.02]"
+            />
+
+            <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/70 px-3 py-1.5 text-[10px] font-semibold tracking-[0.15em] text-[#D4B5FF] backdrop-blur-sm">
+              PROJECT {project.number}
+            </span>
+          </div>
+
+          {/* PROJECT DETAILS */}
+          <div className="p-6">
+            <p className="text-[10px] font-semibold tracking-[0.2em] text-[#B066FF]">
+              {project.category}
             </p>
+
+            <h3 className="mt-3 text-xl font-semibold text-white">
+              {project.name}
+            </h3>
+
+            <p className="mt-3 min-h-[112px] text-sm leading-7 text-[#AAA4B3]">
+              {project.description}
+            </p>
+
+            <p className="mt-4 min-h-[48px] border-t border-white/[0.07] pt-4 text-xs leading-6 text-[#B9A1D5]">
+              {project.stack}
+            </p>
+
+            <Link
+              href={project.href}
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#A259FF]/40 bg-gradient-to-r from-[#873BDA]/20 to-[#A259FF]/10 px-5 py-3 text-sm font-semibold text-[#D4B5FF] transition duration-300 hover:border-[#B066FF]/70 hover:from-[#873BDA]/40 hover:to-[#A259FF]/25 hover:text-white"
+            >
+              View More / Details
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                ↗
+              </span>
+            </Link>
           </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article
-                key={project.number}
-                className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-[#080808] transition duration-300 hover:-translate-y-1.5 hover:border-[#A259FF]/40 hover:shadow-[0_20px_55px_#A259FF10]"
-              >
-                <div
-                  className={`relative flex h-52 items-center justify-center overflow-hidden bg-gradient-to-br ${project.visual}`}
-                >
-                  <div className="absolute h-36 w-36 rounded-full bg-[#A259FF]/20 blur-3xl transition duration-500 group-hover:bg-[#A259FF]/35" />
-                  <div className="absolute inset-4 rounded-xl border border-white/[0.08]" />
-
-                  <span className="relative text-7xl font-light text-white/90 transition duration-500 group-hover:scale-110 group-hover:text-[#D4B5FF]">
-                    {project.symbol}
-                  </span>
-
-                  <span className="absolute left-6 top-6 text-xs tracking-[0.2em] text-[#C28AFF]">
-                    PROJECT {project.number}
-                  </span>
-                  <span className="absolute bottom-6 right-6 text-xs text-white/50">
-                    ↗
-                  </span>
-                </div>
-
-                <div className="p-6">
-                  <p className="text-[10px] font-semibold tracking-[0.2em] text-[#B066FF]">
-                    {project.category}
-                  </p>
-                  <h3 className="mt-3 text-xl font-semibold text-white">
-                    {project.name}
-                  </h3>
-                  <p className="mt-3 min-h-[84px] text-sm leading-7 text-[#AAA4B3]">
-                    {project.description}
-                  </p>
-                  <p className="mt-4 border-t border-white/[0.07] pt-4 text-xs text-[#9D7CC1]">
-                    {project.stack}
-                  </p>
-                  <a
-                    href={project.href}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:text-[#C28AFF]"
-                  >
-                    View Project Details <span>↗</span>
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* EXPERIENCE & GROWTH */}
       <section
@@ -539,10 +616,12 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-7xl">
           <p className="text-xs tracking-[0.25em] text-[#B066FF]">
-            04 / MY JOURNEY
+         MY JOURNEY
           </p>
+
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Experience &amp; <span className="text-[#B066FF]">growth.</span>
+            Experience &amp;{" "}
+            <span className="text-[#B066FF]">growth.</span>
           </h2>
 
           <div className="mt-12 space-y-12">
@@ -567,22 +646,20 @@ export default function HomePage() {
                 <p className="mt-2 text-sm text-[#9D7CC1]">Diligite</p>
 
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-[#AAA4B3]">
-                  Worked as an intern in the Software Development Department at
-                  Diligite, gaining practical exposure to software development
-                  workflows and the professional working environment. This
-                  experience helped me connect my academic knowledge with
-                  practical development work and continue growing my technical
-                  skills.
+                  Worked as an intern in the Software Development Department
+                  at Diligite, gaining practical exposure to software
+                  development workflows and the professional working
+                  environment. This experience helped me connect my academic
+                  knowledge with practical development work and continue
+                  growing my technical skills.
                 </p>
               </div>
             </div>
 
-            {/* PERSONAL PROJECTS */}
+            {/* CONTINUOUS LEARNING */}
             <div className="grid gap-6 md:grid-cols-[180px_1fr]">
               <div>
-                <p className="text-sm font-medium text-[#C28AFF]">
-                  ONGOING
-                </p>
+                <p className="text-sm font-medium text-[#C28AFF]">ONGOING</p>
                 <p className="mt-2 text-xs text-[#81788D]">
                   Continuous Learning
                 </p>
@@ -618,10 +695,12 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-7xl">
           <p className="text-xs tracking-[0.25em] text-[#B066FF]">
-            05 / EDUCATION
+          EDUCATION
           </p>
+
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            My academic <span className="text-[#B066FF]">background.</span>
+            My academic{" "}
+            <span className="text-[#B066FF]">background.</span>
           </h2>
 
           <div className="mt-12 space-y-5">
@@ -671,7 +750,7 @@ export default function HomePage() {
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
           <div>
             <p className="text-xs tracking-[0.25em] text-[#B066FF]">
-              06 / GET IN TOUCH
+            GET IN TOUCH
             </p>
 
             <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
@@ -681,8 +760,9 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-6 max-w-lg text-sm leading-8 text-[#AAA4B3]">
-              Interested in working together, discussing a project, or sharing
-              ideas? Feel free to reach out. I&apos;d love to hear from you.
+              Interested in working together, discussing a project, or
+              sharing ideas? Feel free to reach out. I&apos;d love to hear
+              from you.
             </p>
 
             <div className="mt-8 flex items-center gap-4">
@@ -712,10 +792,12 @@ export default function HomePage() {
                 <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
                   EMAIL ME
                 </p>
+
                 <p className="mt-2 break-all text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
                   kashpiatasnova@gmail.com
                 </p>
               </div>
+
               <span className="shrink-0 text-xl text-[#B066FF] transition group-hover:translate-x-1">
                 ↗
               </span>
@@ -730,10 +812,12 @@ export default function HomePage() {
                 <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
                   CALL ME
                 </p>
+
                 <p className="mt-2 text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
                   +880 1776-893440
                 </p>
               </div>
+
               <span className="shrink-0 text-xl text-[#B066FF] transition group-hover:translate-x-1">
                 ↗
               </span>
@@ -751,9 +835,11 @@ export default function HomePage() {
                 <p className="text-xs tracking-[0.15em] text-[#9D7CC1]">
                   WHATSAPP
                 </p>
+
                 <p className="mt-2 text-sm text-white transition group-hover:text-[#D4B5FF] sm:text-base">
                   +880 1776-893440
                 </p>
+
                 <p className="mt-1 text-xs text-[#81788D]">
                   Message me on WhatsApp
                 </p>
@@ -767,36 +853,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/[0.07] bg-black px-5 py-7 sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
-            <span className="text-sm font-semibold text-white">
-              Kashpia Tasnova
-            </span>
-            <span className="h-1 w-1 rounded-full bg-[#B066FF]" />
-            <span className="text-xs text-[#9D7CC1]">
-              Full-Stack Developer
-            </span>
-          </div>
+{/* FOOTER */}
+<footer className="border-t border-white/[0.08] px-5 py-7 sm:px-8 lg:px-12">
+  <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+    {/* COPYRIGHT — LEFT SIDE */}
+    <p className="text-center text-xs text-[#8F8799] sm:text-left">
+      © {new Date().getFullYear()} Kashpia Tasnova. All rights reserved.
+    </p>
 
-          <p className="text-xs text-[#81788D]">
-            © {new Date().getFullYear()} Kashpia Tasnova. Built with Next.js.
-          </p>
+    {/* SOCIAL LINKS — RIGHT SIDE */}
+    <div className="flex flex-wrap items-center justify-center gap-5 sm:ml-auto">
+      {socialLinks.map((social) => (
+        <a
+          key={social.label}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit my ${social.label} profile`}
+          className="text-xs font-medium text-[#8F8799] transition-colors duration-300 hover:text-[#D4B5FF]"
+        >
+          {social.label}
+        </a>
+      ))}
 
-          {/* VIOLET BACK TO TOP BUTTON */}
-          <a
-            href="#home"
-            aria-label="Back to top"
-            className="group inline-flex items-center gap-2 rounded-full border border-[#A259FF]/40 bg-gradient-to-r from-[#873BDA]/25 to-[#A259FF]/20 px-5 py-3 text-xs font-semibold text-[#D4B5FF] shadow-[0_0_20px_#A259FF12] transition duration-300 hover:-translate-y-1 hover:border-[#B066FF]/70 hover:from-[#873BDA]/40 hover:to-[#A259FF]/35 hover:text-white hover:shadow-[0_0_28px_#A259FF30]"
-          >
-            Back to top
-            <span className="transition-transform duration-300 group-hover:-translate-y-1">
-              ↑
-            </span>
-          </a>
-        </div>
-      </footer>
+      {/* ARROW-ONLY BACK TO TOP BUTTON */}
+      <a
+        href="#home"
+        aria-label="Back to top"
+        title="Back to top"
+        className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#A259FF]/40 bg-gradient-to-r from-[#873BDA]/25 to-[#A259FF]/20 text-lg font-semibold text-[#D4B5FF] shadow-[0_0_20px_#A259FF12] transition duration-300 hover:-translate-y-1 hover:border-[#B066FF]/70 hover:from-[#873BDA]/40 hover:to-[#A259FF]/35 hover:text-white hover:shadow-[0_0_28px_#A259FF30]"
+      >
+        <span className="transition-transform duration-300 group-hover:-translate-y-1">
+          ↑
+        </span>
+      </a>
+    </div>
+  </div>
+</footer>
     </main>
   );
 }
